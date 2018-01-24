@@ -8,7 +8,7 @@ class Planner extends Component {
         return(
         <div className='planner'>
 				<Search />
-				<Results />
+				<Results sunsetTime="SunsetTime state/prop" arrivalTime="Arrival Time" />
 				<Map />
         </div>
         );
@@ -16,3 +16,7 @@ class Planner extends Component {
 }
 
 export default Planner;
+
+
+{/* Variables to pass as props: Sunset Time (from sunset API?) */}
+{/* Arrival Time (from google)? */}
