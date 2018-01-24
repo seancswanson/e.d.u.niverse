@@ -9,7 +9,7 @@ class Search extends Component {
 		}
 	}
 
-	updateLocation = () => {
+	updateLocation = (event) => {
 		//Will update location upon change of the text fields
 		this.setState({ 
 			[event.target.name]: event.target.value
