@@ -19,8 +19,9 @@ class Search extends Component {
 	}
 
 	fetchSunset = (event) => {
-		console.log("Fetch the sunset time");
-		
+		event.preventDefault();
+		console.log("Fetch the sunset time traveling from " + this.state.locationA + " to " + this.state.locationB);
+
 		// Location A&B must not be null before querying backend
 		// Then once we get info back, render these results to change the state
 	}
