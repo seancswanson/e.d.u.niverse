@@ -7,6 +7,7 @@
     "geocoder": "^0.2.3",
     "google-distance-matrix": "^1.1.1",
     "google-maps-react": "^1.1.2",
+    "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-native-google-matrix": "0.0.3"
