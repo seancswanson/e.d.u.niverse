@@ -29,6 +29,11 @@ nav a:hover {
   font-size: 10px;
 }
 
+.div-sunsettime {
+  border:1px solid black;
+  margin: 10px;
+}
+
 .space {
   margin: 15px 0;
 }
