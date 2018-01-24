@@ -14,7 +14,8 @@ class Planner extends Component {
 			locationB: '',
 			sunsetTime: '',
 			lat: '',
-			lng: ''
+            lng: '',
+            distance: ''
 		}
 	}
 
@@ -38,7 +39,7 @@ class Planner extends Component {
 			latitude = data.results[0].geometry.location.lat;
 			longitude = data.results[0].geometry.location.lng;
 			console.log(latitude, longitude);
-
+            let origin = this.state.origin;
 			let sunsetApi = 'https://api.sunrise-sunset.org/json?lat='+latitude+'&lng='+longitude+'&date=today'
             let distanceAPI = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins='+origin+'&destinations='+latitude+','+longitude+'&key=AIzaSyBwHcq2d-eThqq9uo-tVnCr_lDdBk8cCLc';
 			axios.get(`${sunsetApi}`)
@@ -51,11 +52,15 @@ class Planner extends Component {
 					})
 					console.log(base.state);
                 })
-            axios.get(`${distanceAPI}`)
-                .then(({data})=>{
-                    console.log('axios distance', data)
-                })
-
+            axios.post('/map',{
+                origin: origin,
+                latitude: latitude,
+                longitude: longitude
+            }).then(response => {
+                console.log(response)
+            }).catch(err => {
+                console.log('backend error we hope', err)
+            })
 		})
 	}
 
