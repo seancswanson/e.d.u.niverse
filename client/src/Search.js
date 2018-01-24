@@ -11,14 +11,17 @@ class Search extends Component {
 
 	updateLocation = () => {
 		//Will update location upon change of the text fields
-		console.log("Update location");
+		this.setState({ 
+			[event.target.name]: event.target.value
+		});
+		console.log("Location A: " + this.state.locationA + " Location B: " + this.state.locationB);
+
 	}
 
-	fetchSunset = () => {
+	fetchSunset = (event) => {
 		console.log("Fetch the sunset time");
-		// This will do a post route to the back end
-		let locationA = X;
-
+		
+		// Location A&B must not be null before querying backend
 		// Then once we get info back, render these results to change the state
 	}
 

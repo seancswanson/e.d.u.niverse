@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Planner from './Planner.js';
 
 class Home extends Component {
   render(){
     return (
-        <p>This is a home page. You probably ought to write something here</p>
+        <div>
+            <Planner />
+        </div>
       );
   }
 }

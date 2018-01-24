@@ -7,9 +7,9 @@ class Planner extends Component {
     render(){
         return(
             <div className='planner'>
-            <Search />
-            <Results />
-            <Map />
+				<Search />
+				<Results />
+				<Map />
             </div>
         );
     }
