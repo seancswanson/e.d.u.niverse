@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import Search from './Search.js';
+import Results from './Results.js';
+import Map from './Map.js';
 
 class Home extends Component {
   render(){
     return (
-        <p>This is a home page. You probably ought to write something here</p>
+        <div>
+            <Search />
+            <Results />
+            <Map />
+        </div>
       );
   }
 }
