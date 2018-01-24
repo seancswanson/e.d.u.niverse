@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
+import geocoder from 'geocoder';
 
 class Search extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
 			locationA: '',
-			locationB: ''
+			locationB: '',
+			sunsetTime: ''
 		}
 	}
 
@@ -19,8 +21,22 @@ class Search extends Component {
 	}
 
 	fetchSunset = (event) => {
+		let latitude;
+		let longitude;
+
 		event.preventDefault();
 		console.log("Fetch the sunset time traveling from " + this.state.locationA + " to " + this.state.locationB);
+
+		geocoder.geocode(this.state.locationB, function(err,data){
+			latitude = data.results[0].geometry.location.lat;
+			longitude = data.results[0].geometry.location.lng;
+			console.log(latitude, longitude);
+
+			//Axios or fetch for sunset time
+			//Return sunset time from API
+
+		})
+		
 
 		// Location A&B must not be null before querying backend
 		// Then once we get info back, render these results to change the state
@@ -40,6 +56,8 @@ class Search extends Component {
            			</label>
            			<input type="submit" value="Chase the Sun" />
             	</form>
+            	{this.state.lat}, 
+            	{this.state.lng}
             </div>
         );
     }
