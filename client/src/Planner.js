@@ -6,11 +6,11 @@ import Map from './Map.js';
 class Planner extends Component {
     render(){
         return(
-            <div className='planner'>
+        <div className='planner'>
 				<Search />
 				<Results />
 				<Map />
-            </div>
+        </div>
         );
     }
 }
