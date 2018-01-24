@@ -6,7 +6,7 @@ import MapContainer from './MapContainer.js';
 class Planner extends Component {
     render(){
         return(
-            <div className='planner'>
+        <div className='planner'>
 				<Search />
 				<Results />
 				<MapContainer />
