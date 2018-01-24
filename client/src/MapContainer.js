@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-// import distance from 'react-native-google-matrix';
 import axios from 'axios';
 
 const API_URL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&"
