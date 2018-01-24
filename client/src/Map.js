@@ -1,31 +1,22 @@
 import React, { Component } from 'react';
+import initMap from './InitMap.js';
 
 class Map extends Component {
     constructor(props){
         super(props)
         this.state = {
-
+            map: ''
         }
     }
     
   render(){
-    var map = new google.maps.Map({
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 10
-    });
+    var mapURL="https://maps.googleapis.com/maps/api/js?key={process.env.local.GOOGLE_MAPS_API}&callback=initMap"
 
     // if brower support available, ask user for location data and set the map view
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-        var initialLocation = new google.maps.LatLng(
-            position.coords.latitude,
-            position.coords.longitude
-        );
-      map.setCenter(initialLocation);
-        });
-        }
       return(
-        <div>{map}</div>
+        <div>
+            <initMap map={this.props.map}/>
+        </div>
       );
   }
 }
