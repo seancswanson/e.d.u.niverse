@@ -28,7 +28,8 @@ class Planner extends Component {
 	fetchSunset = (event) => {
 		let latitude;
 		let longitude;
-		let base = this;
+        let base = this;
+        let origin = this.state.locationA
 
 		event.preventDefault();
 		console.log("Fetch the sunset time traveling from " + this.state.locationA + " to " + this.state.locationB);
@@ -39,7 +40,7 @@ class Planner extends Component {
 			console.log(latitude, longitude);
 
 			let sunsetApi = 'https://api.sunrise-sunset.org/json?lat='+latitude+'&lng='+longitude+'&date=today'
-
+            let distanceAPI = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins='+origin+'&destinations='+latitude+','+longitude+'&key=AIzaSyBwHcq2d-eThqq9uo-tVnCr_lDdBk8cCLc';
 			axios.get(`${sunsetApi}`)
 				.then(({data}) => {
 					console.log(data);
@@ -49,7 +50,11 @@ class Planner extends Component {
 						sunsetTime: data.results.sunset
 					})
 					console.log(base.state);
-				})
+                })
+            axios.get(`${distanceAPI}`)
+                .then(({data})=>{
+                    console.log('axios distance', data)
+                })
 
 		})
 	}
