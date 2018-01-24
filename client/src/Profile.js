@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Planner from './Planner.js';
 
 class Profile extends Component {
   render(){
@@ -6,6 +7,7 @@ class Profile extends Component {
       return (<div>
           <h2>HELLO AGAIN {this.props.user.name}!</h2>
           <h4>Your email is {this.props.user.email}</h4>
+          <Planner />
         </div>);
     }
     else {
