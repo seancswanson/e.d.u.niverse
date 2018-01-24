@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import geocoder from 'geocoder';
+import axios from 'axios';
+import moment from 'moment';
 
 class Search extends Component {
 	constructor(props){
@@ -7,7 +9,9 @@ class Search extends Component {
 		this.state = {
 			locationA: '',
 			locationB: '',
-			sunsetTime: ''
+			sunsetTime: '',
+			lat: '',
+			lng: ''
 		}
 	}
 
@@ -16,13 +20,12 @@ class Search extends Component {
 		this.setState({ 
 			[event.target.name]: event.target.value
 		});
-		console.log("Location A: " + this.state.locationA + " Location B: " + this.state.locationB);
-
 	}
 
 	fetchSunset = (event) => {
 		let latitude;
 		let longitude;
+		let base = this;
 
 		event.preventDefault();
 		console.log("Fetch the sunset time traveling from " + this.state.locationA + " to " + this.state.locationB);
@@ -32,11 +35,32 @@ class Search extends Component {
 			longitude = data.results[0].geometry.location.lng;
 			console.log(latitude, longitude);
 
+			let sunsetApi = 'https://api.sunrise-sunset.org/json?lat='+latitude+'&lng='+longitude+'&date=today'
+
+			axios.get(`${sunsetApi}`)
+				.then(({data}) => {
+					console.log(data);
+					base.setState({
+						lat: latitude,
+						lng: longitude,
+						sunsetTime: data.results.sunset
+					})
+				})
+
+
+			// 		axios.get(`${API_URL}?q=${this.state.query}&api_key=0Efg5mlFqEAm66u34MZpWipb4gfAsT6A&limit=25`)
+			// .then(({data}) => {
+			// 	console.log(data);
+			// 	this.setState({
+			// 		results: data.data
+			// 	})
+			// })
+
+
 			//Axios or fetch for sunset time
 			//Return sunset time from API
 
 		})
-		
 
 		// Location A&B must not be null before querying backend
 		// Then once we get info back, render these results to change the state
@@ -56,8 +80,9 @@ class Search extends Component {
            			</label>
            			<input type="submit" value="Chase the Sun" />
             	</form>
-            	{this.state.lat}, 
+            	{this.state.lat}
             	{this.state.lng}
+            	{this.state.sunsetTime}
             </div>
         );
     }
