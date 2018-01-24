@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Search from './Search.js';
 import Results from './Results.js';
-import Map from './Map.js';
+import MapContainer from './MapContainer.js';
 
 class Planner extends Component {
     render(){
@@ -9,7 +9,7 @@ class Planner extends Component {
             <div className='planner'>
 				<Search />
 				<Results />
-				<Map />
+				<MapContainer />
             </div>
         );
     }
