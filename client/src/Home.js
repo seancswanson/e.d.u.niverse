@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import Search from './Search.js';
-import Results from './Results.js';
-import Map from './Map.js';
+import Planner from './Planner.js';
 
 class Home extends Component {
   render(){
     return (
         <div>
-            <Search />
-            <Results />
-            <Map />
+            <Planner />
         </div>
       );
   }
