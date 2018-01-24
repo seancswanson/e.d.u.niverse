@@ -48,6 +48,7 @@ class Planner extends Component {
 						lng: longitude,
 						sunsetTime: data.results.sunset
 					})
+					console.log(base.state);
 				})
 
 		})
