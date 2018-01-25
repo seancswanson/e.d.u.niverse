@@ -32,7 +32,7 @@ class Results extends Component {
 
       <div className="div-sunsettime">
         <h5>Pass in Arrival Time state as prop (from Map to Results?)</h5>
-        <p className="p--results__commutetime">If you head out now, you will arive at "TIME"</p>
+        <p className="p--results__commutetime">If you head out now, you will arive in {this.props.duration} (traveling {this.props.distance})</p>
       </div>
       </div>
       )
