@@ -65,20 +65,25 @@ class Planner extends Component {
 
     render(){
         var mapStuff = []
+        var dist;
+        var dur;
         if(this.state.distanceResponse.length>0){
             console.log('in conditional')
             console.log(this.state.distanceResponse)
-            mapStuff.concat(this.state.distanceResponse)
-            return mapStuff.map((thing) => {
-                <li>{thing}</li>
-            })
+            mapStuff = (this.state.distanceResponse).slice()
+            console.log(mapStuff)
+            console.log(mapStuff[0])
+            dist = mapStuff[0].distance.text.value
+            console.log('dist: '+dist)
+            console.log(' getting distance: '+mapStuff[0].distance.text)
+            dur = mapStuff[0].duration.text.value
         }
         return(
         <div className='Planner'>
 			<Search user={this.props.user} data={this.state} updateLocation={this.updateLocation} fetchSunset={this.fetchSunset} />
 			<Results data={this.state} />
-        	<MapContainer />
-            <div><ul>{mapStuff}</ul></div>
+            <div><h1>mapp ish</h1><ul><li>{dist}</li><li>{dur}</li></ul></div>
+            <MapContainer />
         </div>
         );
     }

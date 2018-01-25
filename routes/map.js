@@ -22,7 +22,6 @@ router.post("/", function(req, res, next) {
             console.log('get error', err);
         }else{
             var dataObj = JSON.parse(body);
-            console.log(dataObj.rows[0]);
             var toSend = dataObj.rows[0].elements;
             res.json(toSend);
         }
