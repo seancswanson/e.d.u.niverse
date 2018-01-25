@@ -1,5 +1,8 @@
 /* CUSTOM STYLES */
 
+body {
+  text-align: center;
+}
 
 .search 
 .nav {
@@ -26,12 +29,24 @@ nav a:hover {
   border-radius: 5px;
 }
 
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  margin: 0 auto;
+  background: #444341;
+  padding: 100px;
+  font-weight: 700;
+}
+
 .footer {
   background-color: #555;
   width: 100%;
   height: 20px;
   padding: 10px;
-  margin-top: 100px !important;
+  margin: 20px;
 }
 
 .footer-text {
@@ -90,7 +105,7 @@ label {
   border-radius: 2px;
   padding: 10px 30px;
   width: 75%;
-  margin: 10px auto;
+  margin: 80px auto 10px auto;
 }
 
 .success {
@@ -100,7 +115,7 @@ label {
   border-radius: 2px;
   padding: 10px 30px;
   width: 75%;
-  margin: 10px auto;
+  margin: 80px auto 10px auto;
 }
 
 .no-flash {
