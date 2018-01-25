@@ -16,7 +16,7 @@ class Planner extends Component {
 			lat: '',
             lng: '',
             distance: '',
-            mapResponse: []
+            distanceResponse: []
 		}
 	}
 
@@ -56,7 +56,7 @@ class Planner extends Component {
                 latitude: latitude,
                 longitude: longitude
             }).then(response => {
-                this.setState({mapResponse: response})
+                base.setState({distanceResponse: response.data })
             }).catch(err => {
                 console.log('backend error we hope', err)
             })
@@ -64,11 +64,21 @@ class Planner extends Component {
 	}
 
     render(){
+        var mapStuff = []
+        if(this.state.distanceResponse.length>0){
+            console.log('in conditional')
+            console.log(this.state.distanceResponse)
+            mapStuff.concat(this.state.distanceResponse)
+            return mapStuff.map((thing) => {
+                <li>{thing}</li>
+            })
+        }
         return(
         <div className='planner'>
 			<Search user={this.props.user} data={this.state} updateLocation={this.updateLocation} fetchSunset={this.fetchSunset} />
 			<Results data={this.state} />
         	<MapContainer />
+            <div><ul>{mapStuff}</ul></div>
         </div>
         );
     }
