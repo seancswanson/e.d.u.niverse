@@ -39,8 +39,9 @@ class Planner extends Component {
 			latitude = data.results[0].geometry.location.lat;
 			longitude = data.results[0].geometry.location.lng;
 			console.log(latitude, longitude);
-            let origin = this.state.locationA;
-			let sunsetApi = 'https://api.sunrise-sunset.org/json?lat='+latitude+'&lng='+longitude+'&date=today&formatted=0'
+
+			let sunsetApi = 'https://api.sunrise-sunset.org/json?lat='+latitude+'&lng='+longitude+'&date=today&'
+		
 			axios.get(`${sunsetApi}`)
 				.then(({data}) => {
 					console.log(data);
