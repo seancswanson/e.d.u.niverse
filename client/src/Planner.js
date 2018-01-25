@@ -66,7 +66,7 @@ class Planner extends Component {
     render(){
         return(
         <div className='planner'>
-			<Search data={this.state} updateLocation={this.updateLocation} fetchSunset={this.fetchSunset} />
+			<Search user={this.props.user} data={this.state} updateLocation={this.updateLocation} fetchSunset={this.fetchSunset} />
 			<Results data={this.state} />
         	<MapContainer />
         </div>
