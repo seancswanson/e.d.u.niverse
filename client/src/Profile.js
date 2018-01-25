@@ -11,10 +11,16 @@ class Profile extends Component {
 
     componentDidMount() {
       let user = this.props.user;
-      axios.get('/locations', {
+      axios.post('/locations/profile', {
         user: user
       }).then((result) => {
-        console.log(result);
+
+        let locations = [];
+        result.data.forEach(function(item){ 
+          locations.push(item);
+          console.log(locations);
+        })
+
       }).catch((error) => {
         console.log('error returned', error.response.data);
       });
