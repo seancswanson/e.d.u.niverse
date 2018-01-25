@@ -5,6 +5,7 @@
   padding:5px!important;
   margin:10px auto!important;
   border-radius:3px;
+  width: 95% !important;
 background:rgba(255,255,255,.9);
 }
 
@@ -14,7 +15,18 @@ background: #fc4a1a;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
+.home-title-h{
+  text-transform:uppercase;font-size:25px!important
+}
+.home-description-p{
+  font-style:italic; font-size: 20px!important; width:500px; margin: 10px auto!important
+}
+.btn-signup{
+width:200px!important;padding:10px!important;display:block;margin:10px auto!important;background:lightblue!important;color:black!important;
+}
+.btn-login{
+width: 250px!important;padding:10px!important;display:block;margin: 10px auto 40px auto!important;background:lightblue!important;color:black!important;
+}
 .search 
 .nav {
   background: black;

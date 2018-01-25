@@ -7,7 +7,7 @@ export class MapContainer extends Component {
            this.state = { showingInfoWindow: false, 
             activeMarker: {}, 
             selectedPlace: {}, 
-            style: { height: "300px", width: "300px", margin: "0 auto"}
+            style: { height: "300px", width: "95%", margin: "15px auto", border: "4px solid black"}
             };
 
            // binding this to event-handler functions
