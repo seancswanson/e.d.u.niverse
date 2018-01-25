@@ -5,7 +5,7 @@ class Home extends Component {
   render(){
     return (
         <div>
-            <Planner user={this.props.user} />
+          <Planner user={this.props.user} />
         </div>
       );
   }
