@@ -4,7 +4,6 @@ import momentTimezone from 'moment-timezone';
 
 class Results extends Component {
 
-
   render(){
     const sunsetTime = this.props.data.sunsetTime
     var tz = moment.tz.guess();
@@ -42,6 +41,7 @@ class Results extends Component {
     if(sunsetTime && (localSunset < "7")) {
     return(
     <div>
+    {console.log('Arriving after Sunset')}
       <ResultDiv />
       <AfterSunset />
     </div>
@@ -50,12 +50,14 @@ class Results extends Component {
    else if (sunsetTime && (localSunset > "7")){
     return(
       <div>
+        {console.log('Arriving before Sunset')}
         <ResultDiv />
         <BeforeSunset />
       </div>
       )
   }
   else {
+    {console.log('Awaiting origin')}
     return (<div>Please Submit Your Origin and Destination Location</div>)
     }
   } 

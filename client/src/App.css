@@ -1,19 +1,36 @@
 /* CUSTOM STYLES */
+
+input {
+  display: block;
+  margin: 10px auto;
+  width: 300px;
+  height: 50px;
+}
+
+
+.search 
+.nav {
+  background: black;
+}
+
 nav {
   width: 100%;
-  background-color: #555;
+  background-color: black;
   padding: 10px 0;
 }
 
 nav a {
   margin: 10px;
   text-decoration: none;
-  font-size: 18px;
-  color: #4ff;
+  font-size: 40px;
+  color: white;
+  padding: 10px;
 }
 
 nav a:hover {
-  color: #7f4dd2;
+  background: white;
+  color: black;
+  border-radius: 5px;
 }
 
 .footer {
@@ -38,10 +55,15 @@ nav a:hover {
   margin: 15px 0;
 }
 
+.btn {
+  font-size: 20px !important;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #11f;
   border-radius: 2px;
+  font-size: 20px !important;
   border: none;
   padding: 3px;
 }
@@ -90,8 +112,8 @@ nav a:hover {
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 200px;
+  border-radius: 100%;
 }
 
 .App-header {
@@ -109,7 +131,3 @@ nav a:hover {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
