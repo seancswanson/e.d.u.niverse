@@ -8,13 +8,16 @@ class Search extends Component {
 
     saveLocation = (event) => {
         event.preventDefault();
+        let location = this.props.data.locationB;
+        let user = this.props.user;
         axios.post('/locations', {
-          location: this.props.locationB
+          location: location,
+          user: user
         }).then((result) => {
             console.log(result);
-    }).catch((error) => {
-      console.log('error returned', error.response.data);
-    });
+        }).catch((error) => {
+          console.log('error returned', error.response.data);
+        });
     }
 
     render(){
