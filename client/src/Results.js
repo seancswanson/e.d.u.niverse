@@ -20,7 +20,7 @@ class Results extends Component {
     const AfterSunset = () => {
       return(
       <div className="div-sunsettime">
-        <p className="p--results__true">You will make it after the sun has set! :( </p>
+        <p className="p--results__false">You will make it after the sun has set! :( </p>
       </div>
       )
     }
