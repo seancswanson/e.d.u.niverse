@@ -57,6 +57,7 @@ class Planner extends Component {
                 longitude: longitude
             }).then(response => {
                 base.setState({distanceResponse: response.data })
+                console.log(response.data[0].distance)
             }).catch(err => {
                 console.log('backend error we hope', err)
             })
@@ -73,10 +74,10 @@ class Planner extends Component {
             mapStuff = (this.state.distanceResponse).slice()
             console.log(mapStuff)
             console.log(mapStuff[0])
-            dist = mapStuff[0].distance.text.value
+            dist = mapStuff[0].distance.text
             console.log('dist: '+dist)
             console.log(' getting distance: '+mapStuff[0].distance.text)
-            dur = mapStuff[0].duration.text.value
+            dur = mapStuff[0].duration.text
         }
         return(
         <div className='Planner'>
