@@ -15,7 +15,8 @@ class Planner extends Component {
 			sunsetTime: '',
 			lat: '',
             lng: '',
-            distance: ''
+            distance: '',
+            mapResponse: []
 		}
 	}
 
@@ -55,7 +56,7 @@ class Planner extends Component {
                 latitude: latitude,
                 longitude: longitude
             }).then(response => {
-                console.log('response from backend', response.data.data.rows[0])
+                this.setState({mapResponse: response})
             }).catch(err => {
                 console.log('backend error we hope', err)
             })
