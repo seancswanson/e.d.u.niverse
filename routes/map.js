@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var User = require("../models/user");
 var request = require('request');
 
-router.post("/me/from/token", function(req, res, next) {
+router.post("/", function(req, res, next) {
   // check header or url parameters or post parameters for token
   var origin = req.body.origin;
   var latitude = req.body.latitude;
@@ -22,14 +22,10 @@ router.post("/me/from/token", function(req, res, next) {
             console.log('get error', err);
         }else{
             var dataObj = JSON.parse(body);
-            console.log('data from map distance', dataObj);
+            res.json(dataObj);
         }
       });
   }
-
-  
 });
-
-
 
 module.exports = router;
