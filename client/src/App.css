@@ -1,7 +1,18 @@
 /* CUSTOM STYLES */
 
+.space {
+  border:3px solid black;
+  padding:5px!important;
+  margin:10px auto!important;
+  border-radius:3px;
+background:rgba(255,255,255,.9);
+}
+
 body {
   text-align: center;
+background: #fc4a1a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .search 
@@ -34,11 +45,12 @@ ul {
 }
 
 li {
+  margin: 10px;
   display: inline-block;
-  margin: 0 auto;
-  background: #444341;
-  padding: 100px;
-  font-weight: 700;
+  padding: 20px;
+  color: white;
+  font-weight: 800;
+  background: #555;
 }
 
 .footer {
