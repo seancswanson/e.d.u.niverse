@@ -40,7 +40,7 @@ class Signup extends Component {
   render() {
     let form = '';
     if(this.props.user){
-      return (<Redirect to="/profile" />);
+      return (<Redirect to="/" />);
     }
     else {
       form = (<form onSubmit={this.handleSubmit}>
@@ -70,7 +70,7 @@ class Signup extends Component {
     return (
       <div>
         {form}
-        {this.props.user ? <Redirect to="/profile" /> : ''}
+        {this.props.user ? <Redirect to="/" /> : ''}
       </div>
     );
   }
