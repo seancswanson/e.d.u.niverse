@@ -8,6 +8,15 @@ class Results extends Component {
     const sunsetTime = this.props.data.sunsetTime
     var tz = moment.tz.guess();
     var localSunset = moment(sunsetTime).tz(tz).format('h:MM')
+    var currentTime = moment().tz(tz).format('h:MM')
+    var re = /\d\d?/
+    var ore = /(\d\d?)\sh/
+    var tre = /(\d\d?)\sm/
+    var dist = this.props.distance
+    var dur = this.props.duration
+    var hours = ore.exec(dur)
+    var minutes = tre.exec(dur)
+    
 
     const BeforeSunset = () => {
       return(
@@ -24,21 +33,22 @@ class Results extends Component {
       )
     }
     const ResultDiv = () => {
-     return(
-      <div>
-      <div className="div-sunsettime">
-        <p className="p--results__sunsettime">The Sun will set at your destination at {localSunset}PM</p>
-      </div>
+     return <div>
+         <div className="div-sunsettime">
+           <p className="p--results__sunsettime">
+             The Sun will set at your destination at {localSunset}PM
+           </p>
+         </div>
 
-      <div className="div-sunsettime">
-        <h5>Pass in Arrival Time state as prop (from Map to Results?)</h5>
-        <p className="p--results__commutetime">If you head out now, you will arive in {this.props.duration} (traveling {this.props.distance})</p>
-      </div>
-      </div>
-      )
+         <div className="div-sunsettime">
+           <p className="p--results__commutetime">
+             If you head out now, you will arrive in {this.props.duration} (traveling {this.props.distance})
+           </p>
+         </div>
+       </div>;
     }
 
-    if(sunsetTime && (localSunset < "7")) {
+    if(sunsetTime && (localSunset < 7)) {
     return(
     <div>
     {console.log('Arriving after Sunset')}
@@ -47,7 +57,7 @@ class Results extends Component {
     </div>
     )
   } 
-   else if (sunsetTime && (localSunset > "7")){
+   else if (sunsetTime){
     return(
       <div>
         {console.log('Arriving before Sunset')}
