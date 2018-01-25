@@ -35,8 +35,8 @@ class Profile extends Component {
   render(){
     if(this.props.user && this.props.user.name){
       return (<div className="Profile">
-          <h2>HELLO AGAIN {this.props.user.name}!</h2>
-          <h4>Your email is {this.props.user.email}</h4>
+          <h2>{this.props.user.name}</h2>
+          <h4>Your saved sunset locations:</h4>
           <p>Locations: {this.state.locations}</p>
         </div>);
     }
