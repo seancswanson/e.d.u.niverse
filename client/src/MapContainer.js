@@ -7,29 +7,16 @@ const API_URL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=
 export class MapContainer extends Component {
          constructor(props) {
            super(props);
-           this.state = { showingInfoWindow: false, activeMarker: {}, selectedPlace: {}, style: { height: "300px", width: "300px" }, origins: "41.43206,-81.38992|-33.86748,151.20699", destinations: "40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626", results: [] };
+           this.state = { showingInfoWindow: false, 
+            activeMarker: {}, 
+            selectedPlace: {}, 
+            style: { height: "300px", width: "300px" }
+            };
 
            // binding this to event-handler functions
            this.onMarkerClick = this.onMarkerClick.bind(this);
            this.onMapClicked = this.onMapClicked.bind(this);
          }
-
-         getCommute = () => {
-           axios
-             .get(
-               `${API_URL}origins=${
-                 this.state.origins
-               }&destinations=${
-                 this.state.destinations
-               }&key=AIzaSyBwHcq2d-eThqq9uo-tVnCr_lDdBk8cCLc`
-             )
-             .then(({ data }) => {
-               //needs curlies around data because axios makes a var called data
-              //  this.setState({ results: data.data });
-              console.log('axios response',data)
-               //data.data because of what the object looked like in the console.log
-             });
-         };
 
          onMarkerClick = (props, marker, e) => {
            this.setState({

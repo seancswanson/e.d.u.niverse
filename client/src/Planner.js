@@ -14,7 +14,8 @@ class Planner extends Component {
 			locationB: '',
 			sunsetTime: '',
 			lat: '',
-			lng: ''
+            lng: '',
+            distance: ''
 		}
 	}
 
@@ -28,7 +29,8 @@ class Planner extends Component {
 	fetchSunset = (event) => {
 		let latitude;
 		let longitude;
-		let base = this;
+        let base = this;
+        let origin = this.state.locationA
 
 		event.preventDefault();
 		console.log("Fetch the sunset time traveling from " + this.state.locationA + " to " + this.state.locationB);
@@ -39,7 +41,7 @@ class Planner extends Component {
 			console.log(latitude, longitude);
 
 			let sunsetApi = 'https://api.sunrise-sunset.org/json?lat='+latitude+'&lng='+longitude+'&date=today&'
-
+		
 			axios.get(`${sunsetApi}`)
 				.then(({data}) => {
 					console.log(data);
@@ -49,8 +51,16 @@ class Planner extends Component {
 						sunsetTime: data.results.sunset
 					})
 					console.log(base.state);
-				})
-
+                })
+            axios.post('/map',{
+                origin: origin,
+                latitude: latitude,
+                longitude: longitude
+            }).then(response => {
+                console.log(response)
+            }).catch(err => {
+                console.log('backend error we hope', err)
+            })
 		})
 	}
 

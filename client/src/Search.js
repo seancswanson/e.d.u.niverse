@@ -1,6 +1,22 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class Search extends Component {
+    constructor(props){
+        super(props);
+    }
+
+    saveLocation = (event) => {
+        event.preventDefault();
+        axios.post('/locations', {
+          location: this.props.locationB
+        }).then((result) => {
+            console.log(result);
+    }).catch((error) => {
+      console.log('error returned', error.response.data);
+    });
+    }
+
     render(){
         return(
             <div className="search">
@@ -15,6 +31,7 @@ class Search extends Component {
            			</label>
            			<input type="submit" value="Chase the Sun" />
             	</form>
+                <input type="submit" value="Save" onClick={this.saveLocation} />
             </div>
         );
     }
