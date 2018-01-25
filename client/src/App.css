@@ -1,12 +1,5 @@
 /* CUSTOM STYLES */
 
-input {
-  display: block;
-  margin: 10px auto;
-  width: 300px;
-  height: 50px;
-}
-
 
 .search 
 .nav {
@@ -57,6 +50,24 @@ nav a:hover {
 
 .btn {
   font-size: 20px !important;
+}
+
+input[type="submit"] {
+  font-size: 20px !important;
+  border: 2px solid blue !important;
+  border-radius: 3px;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  width: 300px;
+  height: 50px;
+  font-size: 40px;
+}
+
+label {
+  font-size: 24px;
 }
 
 .btn-primary {
