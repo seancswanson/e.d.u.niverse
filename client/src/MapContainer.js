@@ -7,7 +7,7 @@ export class MapContainer extends Component {
            this.state = { showingInfoWindow: false, 
             activeMarker: {}, 
             selectedPlace: {}, 
-            style: { height: "300px", width: "95%", margin: "15px auto", border: "4px solid black"}
+            style: { height: "300px", width: "80%", margin: "15px auto", border: "4px solid black"}
             };
 
            // binding this to event-handler functions
@@ -33,7 +33,8 @@ export class MapContainer extends Component {
          };
 
          render() {
-           return <Map style={this.state.style} google={this.props.google} onClick={this.onMapClicked}>
+           return (
+            <Map style={this.state.style} google={this.props.google} onClick={this.onMapClicked}>
                <Marker onClick={this.onMarkerClick} name={"Current location"} />
 
                <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
@@ -41,7 +42,8 @@ export class MapContainer extends Component {
                    <h1>{this.state.selectedPlace.name}</h1>
                  </div>
                </InfoWindow>
-             </Map>;
+             </Map>
+             );
          }
        }
 
