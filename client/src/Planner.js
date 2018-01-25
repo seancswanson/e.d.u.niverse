@@ -16,7 +16,8 @@ class Planner extends Component {
 			lat: '',
             lng: '',
             distance: '',
-            distanceResponse: []
+            distanceResponse: [],
+            duration: ''
 		}
 	}
 
@@ -56,8 +57,7 @@ class Planner extends Component {
                 latitude: latitude,
                 longitude: longitude
             }).then(response => {
-                base.setState({distanceResponse: response.data })
-                console.log(response.data[0].distance)
+                base.setState({distanceResponse: response.data, distance: response.data[0].distance.text, duration: response.data[0].duration.text })
             }).catch(err => {
                 console.log('backend error we hope', err)
             })
@@ -65,25 +65,11 @@ class Planner extends Component {
 	}
 
     render(){
-        var mapStuff = []
-        var dist;
-        var dur;
-        if(this.state.distanceResponse.length>0){
-            console.log('in conditional')
-            console.log(this.state.distanceResponse)
-            mapStuff = (this.state.distanceResponse).slice()
-            console.log(mapStuff)
-            console.log(mapStuff[0])
-            dist = mapStuff[0].distance.text
-            console.log('dist: '+dist)
-            console.log(' getting distance: '+mapStuff[0].distance.text)
-            dur = mapStuff[0].duration.text
-        }
         return(
         <div className='Planner'>
 			<Search user={this.props.user} data={this.state} updateLocation={this.updateLocation} fetchSunset={this.fetchSunset} />
 			<Results data={this.state} />
-            <div><h1>mapp ish</h1><ul><li>{dist}</li><li>{dur}</li></ul></div>
+            <div><h1>mapp ish</h1><ul><li>{this.state.distance}</li><li>{this.state.duration}</li></ul></div>
             <MapContainer />
         </div>
         );
