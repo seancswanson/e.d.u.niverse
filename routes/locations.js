@@ -17,7 +17,7 @@ router.post('/', function(req, res, next){
 		if(err){
 	     	console.log(err);
 	    }
-		newLocation.user = user;
+		newLocation.user = user.id;
 		newLocation.save(function(err, location){
 			if (err){
 				return console.log("save error: " + err);
@@ -26,6 +26,21 @@ router.post('/', function(req, res, next){
 			res.json(location);
 		});
 	});
+});
+
+router.get('/', function(req, res){
+
+	let user = req.body.user;
+	let userId = req.body.user.id;
+
+	Location.find({ user: userId }, function(err, location) {
+		if(err){
+			console.log(err);
+		}
+   		console.log(location);
+   		res.send(location);
+   	})
+
 });
 
 module.exports = router;
