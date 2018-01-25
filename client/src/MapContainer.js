@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-import axios from 'axios';
-
-const API_URL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&"
 
 export class MapContainer extends Component {
          constructor(props) {
