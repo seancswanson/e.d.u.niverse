@@ -17,7 +17,7 @@ router.post('/', function(req, res, next){
 		if(err){
 	     	console.log(err);
 	    }
-		newLocation.user = user.id;
+		newLocation.userId = user.id;
 		newLocation.save(function(err, location){
 			if (err){
 				return console.log("save error: " + err);
@@ -28,12 +28,11 @@ router.post('/', function(req, res, next){
 	});
 });
 
-router.get('/', function(req, res){
+router.post('/profile', function(req, res){
 
-	let user = req.body.user;
-	let userId = req.body.user.id;
+	let userToFind = req.body.user.id;
 
-	Location.find({ user: userId }, function(err, location) {
+	Location.find({ userId: userToFind }, function(err, location) {
 		if(err){
 			console.log(err);
 		}

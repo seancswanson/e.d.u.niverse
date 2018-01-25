@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 //create schema
 const locationSchema = new mongoose.Schema({
 	name: String,
-	user: {
+	userId: {
 		type: String,
 		required: true,
 	}
