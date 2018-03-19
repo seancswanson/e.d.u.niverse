@@ -4,11 +4,12 @@ import './App.css';
 import axios from 'axios';
 import Flash from './layout/Flash.js';
 import Footer from './layout/Footer.js';
-import Home from './Home.js';
+import Home from './dashboard/Home.js';
 import Nav from './layout/Nav.js';
 import Login from './auth/Login.js';
 import Profile from './Profile.js';
 import Signup from './auth/Signup.js';
+import Dashboard from './dashboard/Dashboard.js';
 
 class App extends Component {
   constructor(props){
@@ -73,24 +74,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Router>
-          <div>
+      <Router>
+        <div className="App">
             <Nav user={this.state.user} />
-            <div className="space">
               <Flash flashType={this.state.flashType} flash={this.state.flash} setFlash={this.setFlash} cancelFlash={this.cancelFlash} />
               <Route exact path="/" component={
-                () => (<Home user={this.state.user} updateUser={this.updateUser} />)} />
+                () => (<Dashboard user={this.state.user} updateUser={this.updateUser} />)} />
               <Route path="/login" component={
                 () => (<Login user={this.state.user} setFlash={this.setFlash} updateUser={this.updateUser} />)} />
               <Route path="/signup" component={
                 () => (<Signup user={this.state.user} setFlash={this.setFlash} updateUser={this.updateUser} />)} />
               <Route path="/profile" component={
                 () => (<Profile user={this.state.user} setFlash={this.setFlash} />)} />
-            </div>
-          </div>
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }

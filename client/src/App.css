@@ -1,54 +1,25 @@
 /* CUSTOM STYLES */
 
-.space {
-  border:3px solid black;
-  padding:5px!important;
-  margin:10px auto!important;
-  border-radius:3px;
-  width: 95% !important;
-background:rgba(255,255,255,.9);
-}
-body {
-  text-align: center;
-background: #fc4a1a;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.home-title-h{
-  text-transform:uppercase;font-size:25px!important
-}
-.home-description-p{
-  font-style:italic; font-size: 20px!important; width:500px; margin: 10px auto!important
-}
-.btn-signup{
-width:200px!important;padding:10px!important;display:block;margin:10px auto!important;background:lightblue!important;color:black!important;
-}
-.btn-login{
-width: 250px!important;padding:10px!important;display:block;margin: 10px auto 40px auto!important;background:lightblue!important;color:black!important;
-}
-.search 
-.nav {
-  background: black;
-}
-
 nav {
   width: 100%;
   background-color: black;
   padding: 10px 0;
+  text-align: right;
 }
 
 nav a {
-  margin: 10px;
+  margin: 1px;
   text-decoration: none;
-  font-size: 40px;
+  font-size: 20px;
   color: white;
   padding: 10px;
+  transition: all .1s;
 }
 
 nav a:hover {
   background: white;
   color: black;
-  border-radius: 5px;
+  border-radius: 1px;
 }
 
 ul {
@@ -60,66 +31,10 @@ li {
   display: inline-block;
   padding: 20px;
   color: white;
-  font-weight: 800;
+  font-weight: 400;
   background: #555;
 }
 
-.footer {
-  background-color: #555;
-  width: 100%;
-  height: 20px;
-  padding: 10px;
-  margin: 20px;
-}
-
-.footer-text {
-  color: #fff;
-  font-size: 10px;
-}
-
-.div-sunsettime {
-  border:1px solid black;
-  margin: 10px;
-}
-
-.space {
-  margin: 15px 0;
-}
-
-.btn {
-  font-size: 20px !important;
-}
-
-input[type="submit"] {
-  font-size: 20px !important;
-  border: 2px solid blue !important;
-  border-radius: 3px;
-}
-
-input {
-  display: block;
-  margin: 10px auto;
-  width: 300px;
-  height: 50px;
-  font-size: 40px;
-}
-
-label {
-  font-size: 24px;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #11f;
-  border-radius: 2px;
-  font-size: 20px !important;
-  border: none;
-  padding: 3px;
-}
-
-.btn-primary:hover {
-  background-color: #77f;
-}
 
 .error {
   background-color: pink;
@@ -159,24 +74,3 @@ label {
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 200px;
-  border-radius: 100%;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-

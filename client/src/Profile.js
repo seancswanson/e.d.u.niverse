@@ -17,7 +17,7 @@ class Profile extends Component {
       }).then((result) => {
 
         let myLocations = [];
-        result.data.forEach(function(item){ 
+        result.data.forEach(function(item){
           let locationName = item.name;
           myLocations.push(locationName);
           console.log(myLocations);
@@ -33,20 +33,19 @@ class Profile extends Component {
     }
 
   render(){
-    if(this.props.user && this.props.user.name){
+    // if(this.props.user && this.props.user.name){
       return (<div className="Profile">
-          <h2>{this.props.user.name}</h2>
-          <h4>Your saved sunset locations:</h4>
+          {/* <h2>{this.props.user.name}</h2> */}
+          <h4>Your Profile</h4>
           <ul>
             <Location locations={this.state.locations} />
           </ul>
         </div>);
     }
-    else {
-      return (<p>This is a profile page. You need to be logged in to view it.</p>);
-    }
+    // else {
+    //   return (<p>This is a profile page. You need to be logged in to view it.</p>);
+    // }
   }
-}
 
 class Location extends Component {
   constructor(props){

@@ -24,11 +24,10 @@ class Nav extends Component {
     return(
         <div>
           <nav className="nav">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
             {links}
           </nav>
           <header className="App-header">
-            <img src="http://catswilleatyou.com/database/wp-content/uploads/2013/10/2013_10_09_nightandday.gif" className="App-logo" alt="logo" />
           </header>
         </div>
       );
