@@ -11,6 +11,11 @@ import Profile from './Profile';
 import Signup from './auth/Signup';
 import Dashboard from './dashboard/Dashboard';
 import Paint from './dashboard/Paint';
+import Color from './dashboard/Color';
+import Vocab from './dashboard/Vocab';
+import Bustout from './dashboard/Bustout';
+import Calc from './dashboard/Calc';
+import Memory from './dashboard/Memory';
 
 class App extends Component {
   constructor(props){
@@ -90,15 +95,15 @@ class App extends Component {
               <Route path="/explore/paint" component={
                 () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
               <Route path="/explore/color" component={
-                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+                () => (<Color user={this.state.user} setFlash={this.setFlash} />)} />
               <Route path="/explore/vocab" component={
-                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+                () => (<Vocab user={this.state.user} setFlash={this.setFlash} />)} />
               <Route path="/explore/bustout" component={
-                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+                () => (<Bustout user={this.state.user} setFlash={this.setFlash} />)} />
               <Route path="/explore/calc" component={
-                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+                () => (<Calc user={this.state.user} setFlash={this.setFlash} />)} />
               <Route path="/explore/memory" component={
-                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+                () => (<Memory user={this.state.user} setFlash={this.setFlash} />)} />
 
         </div>
       </Router>
