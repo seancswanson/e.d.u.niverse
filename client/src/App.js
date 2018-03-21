@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
-import Flash from './layout/Flash.js';
-import Footer from './layout/Footer.js';
-import Home from './dashboard/Home.js';
-import Nav from './layout/Nav.js';
-import Login from './auth/Login.js';
-import Profile from './Profile.js';
-import Signup from './auth/Signup.js';
-import Dashboard from './dashboard/Dashboard.js';
+import Flash from './layout/Flash';
+import Footer from './layout/Footer';
+import Home from './dashboard/Home';
+import Nav from './layout/Nav';
+import Login from './auth/Login';
+import Profile from './Profile';
+import Signup from './auth/Signup';
+import Dashboard from './dashboard/Dashboard';
+import Paint from './dashboard/Paint';
 
 class App extends Component {
   constructor(props){
@@ -86,6 +87,19 @@ class App extends Component {
                 () => (<Signup user={this.state.user} setFlash={this.setFlash} updateUser={this.updateUser} />)} />
               <Route path="/profile" component={
                 () => (<Profile user={this.state.user} setFlash={this.setFlash} />)} />
+              <Route path="/explore/paint" component={
+                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+              <Route path="/explore/color" component={
+                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+              <Route path="/explore/vocab" component={
+                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+              <Route path="/explore/bustout" component={
+                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+              <Route path="/explore/calc" component={
+                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+              <Route path="/explore/memory" component={
+                () => (<Paint user={this.state.user} setFlash={this.setFlash} />)} />
+
         </div>
       </Router>
     );
