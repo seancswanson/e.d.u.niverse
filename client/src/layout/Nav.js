@@ -24,6 +24,9 @@ class Nav extends Component {
     return(
         <div>
           <nav className="nav">
+          <div className="div--container__brand">
+          <a className="a--brand">E.D.U.niverse</a>
+          </div>
             <Link to="/">Home</Link>
             {links}
           </nav>

@@ -1,19 +1,45 @@
 /* CUSTOM STYLES */
 
+html {
+  width: 100vw;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: var(--heading-font);
+}
+
+/* Colors */
+:root {
+  --white: #ffffff;
+  --pastelblue: #00E1FF;
+  --pastelpurple: #AFA2FF;
+  --grayblue: #929ECD;
+  --gray: #72788D;
+  --heading-font: 'Varela Round', sans-serif;
+  --body-font: 'Open Sans', serif;
+}
+
+/* NAV */
+
+
 nav {
   width: 100%;
-  background-color: black;
-  padding: 10px 0;
+  background-color: var(--grayblue);
   text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: var(--heading-font);
+  border-bottom: 2px solid var(--gray);
 }
 
 nav a {
   margin: 1px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
-  padding: 10px;
-  transition: all .1s;
+  padding: 10px 5px;
+  transition: all .2s;
+  cursor: pointer;
 }
 
 nav a:hover {
@@ -22,20 +48,32 @@ nav a:hover {
   border-radius: 1px;
 }
 
-ul {
+nav ul {
   list-style: none;
 }
 
-li {
+nav li {
   margin: 10px;
   display: inline-block;
-  padding: 20px;
+  padding: 10px;
   color: white;
   font-weight: 400;
   background: #555;
 }
 
+.div--container__brand {
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+}
 
+.a--brand:hover {
+  background: initial !important;
+  color: var(--white);
+  font-weight: bold;
+}
+
+/* Flash Messages */
 .error {
   background-color: pink;
   color: red;
@@ -69,6 +107,19 @@ li {
   border-radius: 2px;
   float: right;
 }
+
+/* Dashboard */
+
+/* -- Main view */
+
+.div--gridcontainer__applinks{
+  display: grid;
+}
+
+.div--grid__appitems {
+
+}
+
 
 /* DEFAULT STYLES FROM CREATE REACT APP MODULE */
 .App {
